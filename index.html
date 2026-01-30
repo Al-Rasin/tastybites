@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TastyBites - Order Delicious Food Online</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🍔</span>
+                    <span class="logo-text">TastyBites</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#" class="nav-link cart-link">
+                        Cart
+                        <span class="cart-count">0</span>
+                    </a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Delicious Food,<br>Delivered Fast</h1>
+                <p>Order your favorite meals from the best restaurants in town</p>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search for food or restaurant...">
+                    <button class="search-btn">Search</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="container">
+                <h2>Browse by Category</h2>
+                <div class="category-filters">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="pizza">🍕 Pizza</button>
+                    <button class="category-btn" data-category="burger">🍔 Burger</button>
+                    <button class="category-btn" data-category="biriyani">🍚 Biriyani</button>
+                    <button class="category-btn" data-category="drinks">🥤 Drinks</button>
+                    <button class="category-btn" data-category="dessert">🍰 Dessert</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="menu-section">
+            <div class="container">
+
+                <div class="food-category" data-category="pizza">
+                    <h3 class="category-title">🍕 Pizza</h3>
+                    <div class="food-grid">
+                        <div class="food-card" data-id="1" data-name="Margherita Pizza" data-price="12.99" data-category="pizza">
+                            <div class="food-img">
+                                <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400" alt="Margherita Pizza">
+                            </div>
+                            <div class="food-info">
+                                <h4>Margherita Pizza</h4>
+                                <p class="description">Classic tomato sauce, mozzarella, fresh basil</p>
+                                <div class="price-row">
+                                    <span class="price">$12.99</span>
+                                    <div class="btn-group">
+                                        <button class="btn add-cart">Add to Cart</button>
+                                        <button class="btn buy-now">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="food-card" data-id="2" data-name="Pepperoni Pizza" data-price="14.99" data-category="pizza">
+                            <div class="food-img">
+                                <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400" alt="Pepperoni Pizza">
+                            </div>
+                            <div class="food-info">
+                                <h4>Pepperoni Pizza</h4>
+                                <p class="description">Loaded with pepperoni and extra cheese</p>
+                                <div class="price-row">
+                                    <span class="price">$14.99</span>
+                                    <div class="btn-group">
+                                        <button class="btn add-cart">Add to Cart</button>
+                                        <button class="btn buy-now">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="food-card" data-id="3" data-name="BBQ Chicken Pizza" data-price="15.99" data-category="pizza">
+                            <div class="food-img">
+                                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400" alt="BBQ Chicken Pizza">
+                            </div>
+                            <div class="food-info">
+                                <h4>BBQ Chicken Pizza</h4>
+                                <p class="description">Grilled chicken, BBQ sauce, red onions</p>
+                                <div class="price-row">
+                                    <span class="price">$15.99</span>
+                                    <div class="btn-group">
+                                        <button class="btn add-cart">Add to Cart</button>
+                                        <button class="btn buy-now">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-category" data-category="burger">
+                    <h3 class="category-title">🍔 Burgers</h3>
+                    <div class="food-grid">
+                        <div class="food-card" data-id="4" data-name="Classic Cheeseburger" data-price="8.99" data-category="burger">
+                            <div class="food-img">
+                                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400" alt="Classic Cheeseburger">
+                            </div>
+                            <div class="food-info">
+                                <h4>Classic Cheeseburger</h4>
+                                <p class="description">Beef patty, cheddar, lettuce, tomato, pickles</p>
+                                <div class="price-row">
+                                    <span class="price">$8.99</span>
+                                    <div class="btn-group">
+                                        <button class="btn add-cart">Add to Cart</button>
+                                        <button class="btn buy-now">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="food-card" data-id="5" data-name="Double Bacon Burger" data-price="11.99" data-category="burger">
+                            <div class="food-img">
+                                <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=400" alt="Double Bacon Burger">
+                            </div>
+                            <div class="food-info">
+                                <h4>Double Bacon Burger</h4>
+                                <p class="description">Double patty, crispy bacon, special sauce</p>
+                                <div class="price-row">
+                                    <span class="price">$11.99</span>
+                                    <div class="btn-group">
+                                        <button class="btn add-cart">Add to Cart</button>
+                                        <button class="btn buy-now">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="food-card" data-id="6" data-name="Veggie Burger" data-price="9.49" data-category="burger">
+                            <div class="food-img">
+                                <img src="https://images.unsplash.com/photo-1520072959219-c595dc870360?w=400" alt="Veggie Burger">
+                            </div>
+                            <div class="food-info">
+                                <h4>Veggie Burger</h4>
+                                <p class="description">Plant-based patty with fresh veggies</p>
+                                <div class="price-row">
+                                    <span class="price">$9.49</span>
+                                    <div class="btn-group">
+                                        <button class="btn add-cart">Add to Cart</button>
+                                        <button class="btn buy-now">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-category" data-category="biriyani">
+                    <h3 class="category-title">🍚 Biriyani</h3>
+                    <div class="food-grid">
+                        <div class="food-card" data-id="7" data-name="Chicken Biriyani" data-price="13.99" data-category="biriyani">
+                            <div class="food-img">
+                                <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400" alt="Chicken Biriyani">
+                            </div>
+                            <div class="food-info">
+                                <h4>Chicken Biriyani</h4>
+                                <p class="description">Aromatic basmati rice with tender chicken</p>
+                                <div class="price-row">
+                                    <span class="price">$13.99</span>
+                                    <div class="btn-group">
+                                        <button class="btn add-cart">Add to Cart</button>
+                                        <button class="btn buy-now">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="food-card" data-id="8" data-name="Mutton Biriyani" data-price="16.99" data-category="biriyani">
+                            <div class="food-img">
+                                <img src="https://images.unsplash.com/photo-1642821373181-696a54913e93?w=400" alt="Mutton Biriyani">
+                            </div>
+                            <div class="food-info">
+                                <h4>Mutton Biriyani</h4>
+                                <p class="description">Slow-cooked mutton with fragrant spices</p>
+                                <div class="price-row">
+                                    <span class="price">$16.99</span>
+                                    <div class="btn-group">
+                                        <button class="btn add-cart">Add to Cart</button>
+                                        <button class="btn buy-now">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="food-card" data-id="9" data-name="Veg Biriyani" data-price="10.99" data-category="biriyani">
+                            <div class="food-img">
+                                <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400" alt="Veg Biriyani">
+                            </div>
+                            <div class="food-info">
+                                <h4>Veg Biriyani</h4>
+                                <p class="description">Mixed vegetables with saffron rice</p>
+                                <div class="price-row">
+                                    <span class="price">$10.99</span>
+                                    <div class="btn-group">
+                                        <button class="btn add-cart">Add to Cart</button>
+                                        <button class="btn buy-now">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-category" data-category="drinks">
+                    <h3 class="category-title">🥤 Drinks</h3>
+                    <div class="food-grid">
+                        <div class="food-card" data-id="10" data-name="Mango Smoothie" data-price="4.99" data-category="drinks">
+                            <div class="food-img">
+                                <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=400" alt="Mango Smoothie">
+                            </div>
+                            <div class="food-info">
+                                <h4>Mango Smoothie</h4>
+                                <p class="description">Fresh mango blended with yogurt</p>
+                                <div class="price-row">
+                                    <span class="price">$4.99</span>
+                                    <div class="btn-group">
+                                        <button class="btn add-cart">Add to Cart</button>
+                                        <button class="btn buy-now">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="food-card" data-id="11" data-name="Iced Coffee" data-price="3.99" data-category="drinks">
+                            <div class="food-img">
+                                <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400" alt="Iced Coffee">
+                            </div>
+                            <div class="food-info">
+                                <h4>Iced Coffee</h4>
+                                <p class="description">Cold brew with milk and ice</p>
+                                <div class="price-row">
+                                    <span class="price">$3.99</span>
+                                    <div class="btn-group">
+                                        <button class="btn add-cart">Add to Cart</button>
+                                        <button class="btn buy-now">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="food-card" data-id="12" data-name="Fresh Lemonade" data-price="2.99" data-category="drinks">
+                            <div class="food-img">
+                                <img src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=400" alt="Fresh Lemonade">
+                            </div>
+                            <div class="food-info">
+                                <h4>Fresh Lemonade</h4>
+                                <p class="description">Squeezed lemons with a hint of mint</p>
+                                <div class="price-row">
+                                    <span class="price">$2.99</span>
+                                    <div class="btn-group">
+                                        <button class="btn add-cart">Add to Cart</button>
+                                        <button class="btn buy-now">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-category" data-category="dessert">
+                    <h3 class="category-title">🍰 Desserts</h3>
+                    <div class="food-grid">
+                        <div class="food-card" data-id="13" data-name="Chocolate Brownie" data-price="5.99" data-category="dessert">
+                            <div class="food-img">
+                                <img src="https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=400" alt="Chocolate Brownie">
+                            </div>
+                            <div class="food-info">
+                                <h4>Chocolate Brownie</h4>
+                                <p class="description">Warm brownie with vanilla ice cream</p>
+                                <div class="price-row">
+                                    <span class="price">$5.99</span>
+                                    <div class="btn-group">
+                                        <button class="btn add-cart">Add to Cart</button>
+                                        <button class="btn buy-now">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="food-card" data-id="14" data-name="Cheesecake" data-price="6.49" data-category="dessert">
+                            <div class="food-img">
+                                <img src="https://images.unsplash.com/photo-1567327613485-fbc7bf196198?w=400" alt="Cheesecake">
+                            </div>
+                            <div class="food-info">
+                                <h4>Cheesecake</h4>
+                                <p class="description">New York style with berry topping</p>
+                                <div class="price-row">
+                                    <span class="price">$6.49</span>
+                                    <div class="btn-group">
+                                        <button class="btn add-cart">Add to Cart</button>
+                                        <button class="btn buy-now">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="food-card" data-id="15" data-name="Ice Cream Sundae" data-price="4.99" data-category="dessert">
+                            <div class="food-img">
+                                <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400" alt="Ice Cream Sundae">
+                            </div>
+                            <div class="food-info">
+                                <h4>Ice Cream Sundae</h4>
+                                <p class="description">Three scoops with chocolate sauce</p>
+                                <div class="price-row">
+                                    <span class="price">$4.99</span>
+                                    <div class="btn-group">
+                                        <button class="btn add-cart">Add to Cart</button>
+                                        <button class="btn buy-now">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>TastyBites</h4>
+                <p>Delivering happiness to your doorstep since 2024</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Email: hello@tastybites.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TastyBites. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
