@@ -151,10 +151,12 @@ placeOrderBtn.addEventListener('click', function() {
         return;
     }
 
-    alert('Order placed successfully! Thank you for ordering from TastyBites.');
+    // Clear cart
     cart = [];
     saveCart();
-    renderOrderItems();
+
+    // Show success modal
+    document.getElementById('successModal').classList.add('active');
 });
 
 // Mobile menu toggle
