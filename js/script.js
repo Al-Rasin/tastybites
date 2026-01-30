@@ -40,11 +40,14 @@ function showNotification(message) {
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background: #333;
-        color: white;
-        padding: 15px 25px;
-        border-radius: 8px;
+        background: linear-gradient(135deg, #2c1810 0%, #3d2418 100%);
+        color: #d4a853;
+        padding: 18px 30px;
+        border-radius: 5px;
+        border: 2px solid #d4a853;
         z-index: 9999;
+        font-family: 'Lora', serif;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
         animation: slideIn 0.3s ease;
     `;
 
@@ -181,6 +184,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', updateActiveNav);
 });
+
+// Carousel scroll function
+function scrollCarousel(button, direction) {
+    const wrapper = button.parentElement;
+    const grid = wrapper.querySelector('.food-grid');
+    const cardWidth = 345; // card width + gap
+    grid.scrollBy({
+        left: direction * cardWidth,
+        behavior: 'smooth'
+    });
+}
 
 const style = document.createElement('style');
 style.textContent = `

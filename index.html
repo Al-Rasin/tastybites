@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TastyBites - Order Delicious Food Online</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -63,7 +63,9 @@
 
                 <div class="food-category" data-category="pizza">
                     <h3 class="category-title">🍕 Pizza</h3>
-                    <div class="food-grid">
+                    <div class="carousel-wrapper">
+                        <button class="carousel-btn prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+                        <div class="food-grid">
                         <div class="food-card" data-id="1" data-name="Margherita Pizza" data-price="350" data-category="pizza">
                             <div class="food-img">
                                 <img src="images/margherita-pizza.jpg" alt="Margherita Pizza">
@@ -149,11 +151,15 @@
                             </div>
                         </div>
                     </div>
+                        <button class="carousel-btn next" onclick="scrollCarousel(this, 1)">&#10095;</button>
+                    </div>
                 </div>
 
                 <div class="food-category" data-category="burger">
                     <h3 class="category-title">🍔 Burgers</h3>
-                    <div class="food-grid">
+                    <div class="carousel-wrapper">
+                        <button class="carousel-btn prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+                        <div class="food-grid">
                         <div class="food-card" data-id="4" data-name="Classic Cheeseburger" data-price="220" data-category="burger">
                             <div class="food-img">
                                 <img src="images/classic-cheeseburger.jpg" alt="Classic Cheeseburger">
@@ -239,11 +245,15 @@
                             </div>
                         </div>
                     </div>
+                        <button class="carousel-btn next" onclick="scrollCarousel(this, 1)">&#10095;</button>
+                    </div>
                 </div>
 
                 <div class="food-category" data-category="biriyani">
                     <h3 class="category-title">🍚 Biriyani</h3>
-                    <div class="food-grid">
+                    <div class="carousel-wrapper">
+                        <button class="carousel-btn prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+                        <div class="food-grid">
                         <div class="food-card" data-id="7" data-name="Chicken Biriyani" data-price="280" data-category="biriyani">
                             <div class="food-img">
                                 <img src="images/chicken-biriyani.jpg" alt="Chicken Biriyani">
@@ -329,11 +339,15 @@
                             </div>
                         </div>
                     </div>
+                        <button class="carousel-btn next" onclick="scrollCarousel(this, 1)">&#10095;</button>
+                    </div>
                 </div>
 
                 <div class="food-category" data-category="drinks">
                     <h3 class="category-title">🥤 Drinks</h3>
-                    <div class="food-grid">
+                    <div class="carousel-wrapper">
+                        <button class="carousel-btn prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+                        <div class="food-grid">
                         <div class="food-card" data-id="10" data-name="Mango Smoothie" data-price="120" data-category="drinks">
                             <div class="food-img">
                                 <img src="images/mango-smoothie.jpg" alt="Mango Smoothie">
@@ -436,11 +450,15 @@
                             </div>
                         </div>
                     </div>
+                        <button class="carousel-btn next" onclick="scrollCarousel(this, 1)">&#10095;</button>
+                    </div>
                 </div>
 
                 <div class="food-category" data-category="dessert">
                     <h3 class="category-title">🍰 Desserts</h3>
-                    <div class="food-grid">
+                    <div class="carousel-wrapper">
+                        <button class="carousel-btn prev" onclick="scrollCarousel(this, -1)">&#10094;</button>
+                        <div class="food-grid">
                         <div class="food-card" data-id="13" data-name="Chocolate Brownie" data-price="150" data-category="dessert">
                             <div class="food-img">
                                 <img src="images/chocolate-brownie.jpg" alt="Chocolate Brownie">
@@ -542,6 +560,8 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                        <button class="carousel-btn next" onclick="scrollCarousel(this, 1)">&#10095;</button>
                     </div>
                 </div>
 
