@@ -66,12 +66,13 @@ function buyNow(id, name, price) {
     window.location.href = 'order.html';
 }
 
-function filterByCategory(category) {
+function filterByCategory(category, clickedBtn) {
     categoryBtns.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+    clickedBtn.classList.add('active');
 
     if (category === 'all') {
         foodCategories.forEach(cat => cat.classList.remove('hidden'));
+        foodCards.forEach(card => card.classList.remove('hidden'));
     } else {
         foodCategories.forEach(cat => {
             if (cat.dataset.category === category) {
@@ -80,11 +81,15 @@ function filterByCategory(category) {
                 cat.classList.add('hidden');
             }
         });
+        foodCards.forEach(card => card.classList.remove('hidden'));
     }
 }
 
 function searchFood(query) {
     query = query.toLowerCase().trim();
+
+    document.querySelector('.category-btn.active').classList.remove('active');
+    document.querySelector('.category-btn[data-category="all"]').classList.add('active');
 
     if (query === '') {
         foodCards.forEach(card => card.classList.remove('hidden'));
@@ -93,6 +98,7 @@ function searchFood(query) {
     }
 
     foodCategories.forEach(cat => cat.classList.remove('hidden'));
+    foodCards.forEach(card => card.classList.remove('hidden'));
 
     foodCards.forEach(card => {
         const name = card.dataset.name.toLowerCase();
@@ -111,6 +117,24 @@ function searchFood(query) {
             cat.classList.add('hidden');
         }
     });
+}
+
+function updateActiveNav() {
+    const navLinks = document.querySelectorAll('.nav-link:not(.cart-link)');
+    const sections = {
+        'hero': document.querySelector('.hero'),
+        'menu': document.getElementById('menu')
+    };
+
+    const scrollPos = window.scrollY + 150;
+
+    if (sections.menu && scrollPos >= sections.menu.offsetTop) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        document.querySelector('.nav-link[href="#menu"]').classList.add('active');
+    } else {
+        navLinks.forEach(link => link.classList.remove('active'));
+        document.querySelector('.nav-link[href="index.html"]').classList.add('active');
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -132,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     categoryBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            filterByCategory(this.dataset.category);
+            filterByCategory(this.dataset.category, this);
         });
     });
 
@@ -147,6 +171,15 @@ document.addEventListener('DOMContentLoaded', function() {
     hamburger.addEventListener('click', function() {
         navMenu.classList.toggle('active');
     });
+
+    document.querySelectorAll('.nav-link:not(.cart-link)').forEach(link => {
+        link.addEventListener('click', function() {
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    window.addEventListener('scroll', updateActiveNav);
 });
 
 const style = document.createElement('style');
