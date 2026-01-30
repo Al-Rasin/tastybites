@@ -1,7 +1,5 @@
-// Cart array to store items
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// DOM elements
 const cartCountEl = document.querySelector('.cart-count');
 const searchInput = document.getElementById('searchInput');
 const categoryBtns = document.querySelectorAll('.category-btn');
@@ -10,14 +8,12 @@ const foodCategories = document.querySelectorAll('.food-category');
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
-// Update cart count display
 function updateCartCount() {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCountEl.textContent = totalItems;
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Add item to cart
 function addToCart(id, name, price) {
     const existingItem = cart.find(item => item.id === id);
 
@@ -36,7 +32,6 @@ function addToCart(id, name, price) {
     showNotification(name + ' added to cart!');
 }
 
-// Show notification
 function showNotification(message) {
     const notification = document.createElement('div');
     notification.className = 'notification';
@@ -60,9 +55,7 @@ function showNotification(message) {
     }, 2000);
 }
 
-// Buy now - go directly to order page
 function buyNow(id, name, price) {
-    // Clear cart and add only this item
     cart = [{
         id: id,
         name: name,
@@ -73,7 +66,6 @@ function buyNow(id, name, price) {
     window.location.href = 'order.html';
 }
 
-// Category filter
 function filterByCategory(category) {
     categoryBtns.forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
@@ -91,7 +83,6 @@ function filterByCategory(category) {
     }
 }
 
-// Search functionality
 function searchFood(query) {
     query = query.toLowerCase().trim();
 
@@ -114,7 +105,6 @@ function searchFood(query) {
         }
     });
 
-    // Hide empty categories
     foodCategories.forEach(cat => {
         const visibleCards = cat.querySelectorAll('.food-card:not(.hidden)');
         if (visibleCards.length === 0) {
@@ -123,11 +113,9 @@ function searchFood(query) {
     });
 }
 
-// Event listeners
 document.addEventListener('DOMContentLoaded', function() {
     updateCartCount();
 
-    // Add to cart buttons
     document.querySelectorAll('.add-cart').forEach(btn => {
         btn.addEventListener('click', function() {
             const card = this.closest('.food-card');
@@ -135,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Buy now buttons
     document.querySelectorAll('.buy-now').forEach(btn => {
         btn.addEventListener('click', function() {
             const card = this.closest('.food-card');
@@ -143,14 +130,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Category filters
     categoryBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             filterByCategory(this.dataset.category);
         });
     });
 
-    // Search
     searchInput.addEventListener('input', function() {
         searchFood(this.value);
     });
@@ -159,13 +144,11 @@ document.addEventListener('DOMContentLoaded', function() {
         searchFood(searchInput.value);
     });
 
-    // Mobile menu toggle
     hamburger.addEventListener('click', function() {
         navMenu.classList.toggle('active');
     });
 });
 
-// Add CSS for notification animation
 const style = document.createElement('style');
 style.textContent = `
     @keyframes slideIn {
