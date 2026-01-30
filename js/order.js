@@ -168,4 +168,14 @@ hamburger.addEventListener('click', function() {
 document.addEventListener('DOMContentLoaded', function() {
     renderOrderItems();
     updateCartCount();
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
 });
